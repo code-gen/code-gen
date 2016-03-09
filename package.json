@@ -2,7 +2,23 @@
   "name": "code-gen",
   "version": "0.0.1",
   "description": "Generate code from Pseudo code",
-  "repository":{
+  "author": "Pradeep Kumar Tippa <pktippa@gmail.com>",
+  "contributors": [
+    "Pradeep Kumar Tippa <pktippa@gmail.com>"
+  ],
+  "keywords": [
+    "code-gen",
+    "cg"
+  ],
+  "main": "lib/code-gen.js",
+  "bin": {
+    "cg": "./bin/cg.js"
+  },
+  "dependencies": {
+    "commander": "2.9.0",
+    "express": "4.13.4"
+  },
+  "repository": {
     "type": "git",
     "url": "https://github.com/code-gen/code-gen"
   },
