@@ -7,6 +7,8 @@
 var cgCommander = require('commander');
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser')
+var cgservices = require('../routes/cgservices');
 
 // CLI Commands
 cgCommander
@@ -18,6 +20,9 @@ cgCommander
     console.log('Press CTRL + C to stop the server.');
     // Using express for serving static content and running web server
     app.use('/cgserver',express.static(__dirname + '/../client'));
+    app.use(bodyParser.urlencoded({ extended: false }));
+    app.use(bodyParser.json());
+    app.use('/cgservices', cgservices);
     app.listen(process.env.PORT || 3030);
   });
 
