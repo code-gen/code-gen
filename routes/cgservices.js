@@ -8,30 +8,36 @@ router.route('/newFile').post(function(req, res) {
   var filecontent = req.body.filecontent;
   var fullfilepath = path.resolve(directory,filename);
   console.log('fullfilepath ' + fullfilepath);
-  fs.writeFile(fullfilepath, filecontent, function(err){
+  fs.writeFile(fullfilepath, filecontent || "", function(err){
     if(err){
       console.log('Got error While writing the file to disk. Error - ' + err);
       res.send('Got error while writing the file to disk');
     }
     else{
       console.log('File created successfully.');
-      res.write('Start Response.\n');
-      var spawnProcess = childProcess.spawn('node',[fullfilepath]);
-      spawnProcess.stdout.on('data', function(data) {
-        console.log('on stdout data ' + data);
-        res.write(data);
-      });
-      
-      spawnProcess.stderr.on('data', function(data) {
-        console.log('on stderr data ' + data);
-      });
-
-      spawnProcess.on('exit', function(code){
-        console.log('on exit with code ' + code );
-        res.end('End of Reponse.');
-      });
-      
+      executeFile(fullfilepath, res);
     } 
   });
 });
+
+function executeFile(filePath, res) {
+  res.write('Start Response.\n');
+  var spawnProcess = childProcess.spawn('node',[filePath]);
+  spawnProcess.stdout.on('data', function(data) {
+    console.log('on stdout data ' + data);
+    res.write(data);
+  });
+  
+  spawnProcess.stderr.on('data', function(data) {
+    console.log('on stderr data ' + data);
+    res.write(data);
+  });
+  
+  spawnProcess.on('exit', function(code){
+    console.log('on exit with code ' + code );
+    res.end('End of Reponse.');
+  });
+  
+}
+
 module.exports = router;
