@@ -4,7 +4,8 @@
   "description": "Generate code from Pseudo code",
   "author": "Pradeep Kumar Tippa <pktippa@gmail.com>",
   "contributors": [
-    "Pradeep Kumar Tippa <pktippa@gmail.com>"
+    "Pradeep Kumar Tippa <pktippa@gmail.com>",
+    "Ajith Vasudevan"
   ],
   "keywords": [
     "code-gen",

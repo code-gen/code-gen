@@ -46,7 +46,7 @@ function executeFileSync(filePath, res) {
 router.route('/executeFile').get(function(req, res) {
   var currentTime = new Date().getTime();
   var filePath = req.query.filePath;
-  res.end('Process Id : ' + currentTime);
+  res.json({'pid': currentTime});
   var execFile = new executeFile(filePath, currentTime);
   execFile.process();
 });
@@ -89,7 +89,7 @@ router.route('/getResponse').get(function(req, res) {
     }
     else{
       console.log('Response in file - \n' + data);
-      res.send(data);
+      res.json({'response': data.toString() , 'status': 'completed'});
     }
   });
 });

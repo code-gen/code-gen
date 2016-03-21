@@ -22,6 +22,7 @@ cgCommander
     app.use('/cgserver',express.static(__dirname + '/../client'));
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(bodyParser.json());
+    // Adding routes
     app.use('/cgservices', cgservices);
     app.listen(process.env.PORT || 3030);
   });
