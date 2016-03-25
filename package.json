@@ -1,6 +1,6 @@
 {
   "name": "code-gen",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Generate code from Pseudo code",
   "author": "Pradeep Kumar Tippa <pktippa@gmail.com>",
   "contributors": [
