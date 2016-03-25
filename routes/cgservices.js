@@ -4,7 +4,7 @@ var fs = require('fs');
 var childProcess = require('child_process');
 
 // For creating new File and running the filecontent in sync and giving the response.
-router.route('/newFile').post(function(req, res) {
+router.route('/createNewFile').post(function(req, res) {
   var filename = req.body.filename;
   var directory = req.body.directory;
   var filecontent = req.body.filecontent;
