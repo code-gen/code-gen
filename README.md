@@ -1,4 +1,4 @@
-# code-gen cg
+# Code-Gen CG
 Generate code from Pseudo code
 
 Most of the times we write the same code we wrote some time back in the same programming language, the idea is to generate actual code from the pseudo code. 

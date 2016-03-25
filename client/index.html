@@ -1,6 +1,23 @@
+<!DOCTYPE html>
 <html>
-<head><title>Code-Gen CG</title></head>
-<body>
-Welcome to Code-Gen CG
-</body>
+  <head>
+    <title>Code-Gen CG</title>
+  </head>
+  <body>
+    Welcome to Code-Gen CG
+    <br/>
+    <br/>
+    <form id="newFileForm" name="newFileForm" action="/cgservices/createNewFile" method="post">
+      <label>Absolute directory path : </label><br/>
+      <input type="text" id="directory" name="directory"/>
+      <br/><br/>
+      <label>File Name:</label><br/>
+      <input type="text" id="filename" name="filename"/>
+      <br/><br/>
+      <label>Code</label><br/>
+      <textarea id="filecontent" name="filecontent" rows="20" cols="100"></textarea>
+      <br/>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
 </html>
